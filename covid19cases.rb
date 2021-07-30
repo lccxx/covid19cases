@@ -30,7 +30,7 @@ dates = { }
 dates.sort { |a, b| b[0] <=> a[0] }.to_h.each { |date, data|
   print "#{date}"
   data.each { |country, row|
-    print("\t#{country}: %7d, %-6d" % row)
+    print("\t#{country}: %7d, +%-6d" % row)
   }
   puts ""
 }
