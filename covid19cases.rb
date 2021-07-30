@@ -6,9 +6,9 @@ require 'nokogiri'
 dates = { }
 
 { :US => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_States',
-        :UK => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_Kingdom',
-        :PH => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_Philippines',
-        :IL => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Israel' }.each { |country, url|
+  :UK => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_Kingdom',
+  :PH => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_Philippines',
+  :IL => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Israel' }.each { |country, url|
   doc = Nokogiri::HTML Net::HTTP.get URI url
   data = [ ]
   doc.css('tr.mw-collapsible').map { |tr|
