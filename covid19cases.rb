@@ -8,7 +8,9 @@ dates = { }
 { :US => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_States',
   :UK => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_Kingdom',
   :PH => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_Philippines',
-  :IL => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Israel' }.each { |country, url|
+  :IN => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_India',
+  :IL => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Israel',
+}.each { |country, url|
   doc = Nokogiri::HTML Net::HTTP.get URI url
   data = [ ]
   doc.css('tr.mw-collapsible').map { |tr|
@@ -32,7 +34,7 @@ dates = { }
 dates.sort { |a, b| b[0] <=> a[0] }.to_h.each { |date, data|
   print "#{date}"
   data.each { |country, row|
-    print("\t#{country}, C: %7d, D: %5d, %+7d, %+-5d" % row)
+    print("  #{country}, C: %-8d D: %-7d %+-7d %+-6d" % row)
   }
   puts ""
 }
