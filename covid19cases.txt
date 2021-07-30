@@ -541,4 +541,4 @@
 2020-01-24  US, C: 2        D: 0       +1      +0    
 2020-01-21  US, C: 1        D: 0       +0      +0    
 
-source code: https://gist.github.com/lccxz/c422faba53e6f82acdf0f595df82bddd
+source code: https://github.com/lccxz/covid19cases/blob/master/covid19cases.rb
