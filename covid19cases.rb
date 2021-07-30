@@ -39,4 +39,4 @@ dates.sort { |a, b| b[0] <=> a[0] }.to_h.each { |date, data|
   puts ""
 }
 
-puts "\nsource code: https://gist.github.com/lccxz/c422faba53e6f82acdf0f595df82bddd"
+puts "\nsource code: https://github.com/lccxz/covid19cases/blob/master/covid19cases.rb"
