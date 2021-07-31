@@ -5,7 +5,7 @@ require 'nokogiri'
 
 dates = { }
 
-{ :US => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_States',
+countries = { :US => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_States',
   :UK => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_Kingdom',
   :PH => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_Philippines',
   :IN => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_India',
@@ -33,8 +33,11 @@ dates = { }
 
 dates.sort { |a, b| b[0] <=> a[0] }.to_h.each { |date, data|
   print "#{date}"
-  data.each { |country, row|
-    print("  #{country}, C: %-8d D: %-7d %+-7d %+-6d" % row)
+  countries.sort { |a, b| b[0] <=> a[0] }.to_h.each { |country, url|
+    print("  #{country}, ")
+    row = data[country]
+    print("C: %-8d D: %-7d %+-7d %+-6d" % row) if row
+    print("C: %-8s D: %-7s %+-7s %+-6s" % ([ '-' ] * 4)) if row.nil?
   }
   puts ""
 }
