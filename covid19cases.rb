@@ -81,8 +81,5 @@ def html_output(dates, countries)
 end
 
 
-if ARGV[0].upcase == "HTML"
-  html_output(dates, countries)
-else
-  text_output(dates, countries)
-end
+text_output(dates, countries) if ARGV[0].nil?
+html_output(dates, countries) if ARGV[0] && ARGV[0].upcase == "HTML"
