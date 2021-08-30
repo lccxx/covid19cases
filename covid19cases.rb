@@ -54,6 +54,7 @@ def html_output(dates, countries)
   puts '<html>'
   puts '<meta charset="utf-8" />'
   puts '<title>COVID-19 cases table</title>'
+  puts '<style>body { background-color: #000; color: rgba(255,255,255,0.7); }</style>'
   puts ''
   puts '<center><table style="text-align: center; border-spacing: 8px;">'
   puts '<thead><tr><th><br/></th>'
