@@ -11,8 +11,6 @@ countries = { :US => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_Uni
   :UK => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_Kingdom',
   :TH => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Thailand',
   :PH => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_Philippines',
-  :IN => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_India',
-  :IL => 'https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Israel',
 }.each { |country, url|
   doc = Nokogiri::HTML Net::HTTP.get URI url
   data = [ ]
